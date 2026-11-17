@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f1115">
+<!-- SEO local: la ciudad va aqui y en la seccion Presencial, no en el hero. [SOL: confirmar ciudad/zona] -->
+<title>SOLFIT | Entrenamiento con método · Presencial, online y cursos · Las Trancas</title>
+<meta name="description" content="Entrena con sistema en SOLFIT: gimnasio en Las Trancas, entrenamiento online y cursos. Planes mensuales y pases diarios.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SOLFIT | Deja de improvisar. Entrena con sistema.">
+<meta property="og:description" content="Entrenamiento con método: en el gimnasio, online o a tu ritmo con cursos.">
+<meta property="og:locale" content="es_CL">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HealthClub","name":"SOLFIT","description":"Gimnasio y entrenamiento online con método.","areaServed":"Las Trancas","sameAs":["https://instagram.com/solfitgym"]}
+</script>
+<style>
+:root{
+  /* José decide colores y tipografías: cambia solo estas variables */
+  --bg:#ffffff; --bg-alt:#f4f5f7; --text:#15171a; --muted:#4a4f57;
+  --primary:#d9480f; --primary-dark:#b53a0a; --primary-text:#ffffff;
+  --dark:#0f1115; --dark-2:#1b1e24; --line:#dcdfe4;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --radius:16px; --max:1120px;
+  --shadow:0 10px 30px rgba(15,17,21,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:var(--font);font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+section.alt{background:var(--bg-alt)}
+h1,h2,h3{line-height:1.12;margin:0 0 12px;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,7vw,4rem);font-weight:900}
+h2{font-size:clamp(1.7rem,4.5vw,2.5rem);font-weight:800}
+h3{font-size:1.2rem}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:10px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.sec-head{margin-bottom:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--primary);background:var(--primary);color:var(--primary-text);cursor:pointer;font-size:16px;font-family:inherit;transition:transform .15s,background .15s,box-shadow .15s}
+.btn:hover{background:var(--primary-dark);border-color:var(--primary-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--text)}
+.btn.ghost:hover{background:var(--text);color:#fff;border-color:var(--text)}
+.btn.sm{min-height:42px;padding:8px 18px}
+.grid{display:grid;gap:20px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .2s,box-shadow .2s}
+.card.lift:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.price{font-size:2rem;font-weight:900;letter-spacing:-.02em}
+.price small{font-size:.9rem;font-weight:600;color:var(--muted)}
+.sol{background:#fff3a3;color:#222;padding:1px 6px;border-radius:4px;font-size:.9em}
+.pill{display:inline-block;background:#fde8dc;color:#7a2a06;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px}
+.icon{width:44px;height:44px;border-radius:12px;background:#fde8dc;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px}
+
+/* Header */
+.skip{position:absolute;left:-999px;top:8px;background:#000;color:#fff;padding:10px 16px;z-index:100;border-radius:8px}
+.skip:focus{left:8px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px}
+.logo{height:36px;width:auto}
+.logo-fallback{font-weight:900;letter-spacing:.1em;font-size:1.35rem}
+nav.main{display:flex;gap:20px;flex:1;margin-left:12px}
+nav.main a{text-decoration:none;font-weight:600;padding:8px 2px}
+nav.main a:hover{color:var(--primary)}
+.hdr-btns{display:flex;gap:8px;margin-left:auto}
+.burger{display:none;background:none;border:2px solid var(--text);border-radius:10px;width:46px;height:46px;font-size:1.3rem;cursor:pointer}
+@media(max-width:860px){
+  .burger{display:block;margin-left:auto}
+  .hdr-btns{display:none}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;gap:0;margin:0;padding:8px 20px 18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  nav.main.open{display:flex}
+  nav.main a{padding:14px 0;border-bottom:1px solid var(--line)}
+  nav.main .m-btns{display:flex;gap:10px;padding-top:14px}
+}
+@media(min-width:861px){nav.main .m-btns{display:none}}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--dark) 0%,var(--dark-2) 100%);color:#fff;padding:80px 0 72px}
+.hero .wrap{display:grid;gap:40px;align-items:center;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.hero .lead{color:#d5d9e0}
+.hero .eyebrow{color:#ffa879}
+.hero .btn.ghost{color:#fff;border-color:#fff}
+.hero .btn.ghost:hover{background:#fff;color:var(--dark)}
+.hero-photo{background:#e9ebef;color:#222;border-radius:var(--radius);min-height:320px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;overflow:hidden}
+.hero-photo img{border-radius:var(--radius);width:100%;object-fit:cover}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+/* Prueba social */
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;text-align:center}
+.proof div{padding:14px}
+.proof strong{display:block;font-size:1.5rem;font-weight:900}
+.proof span.l{color:var(--muted);font-size:.95rem}
+
+/* Presencial */
+.plan{position:relative;display:flex;flex-direction:column;gap:6px}
+.plan p{margin:0;color:var(--muted)}
+.plan .btn{margin-top:auto;align-self:flex-start}
+.plan .grow{flex:1}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+td,th{padding:14px 18px;border-bottom:1px solid var(--line);text-align:left}
+th{background:var(--bg-alt)}
+tr:last-child td{border-bottom:0}
+td.p{font-weight:800;text-align:right}
+.where{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:20px}
+
+/* Compra */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 20px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--primary);color:#fff;font-weight:900;margin-bottom:12px}
+.notice{background:#fff;border-left:5px solid var(--primary);padding:14px 18px;border-radius:8px}
+
+/* Formularios */
+form label{display:block;margin:12px 0 6px;font-weight:600}
+input[type=text],input[type=email]{width:100%;padding:14px;font-size:16px;border:1px solid #767b84;border-radius:10px;font-family:inherit}
+.check{display:flex;gap:12px;align-items:flex-start;margin:16px 0}
+.check input{margin-top:4px;width:22px;height:22px;flex:none}
+.check label{margin:0;font-weight:400}
+details{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin-bottom:12px}
+summary{font-weight:700;cursor:pointer;font-size:1.05rem}
+details p{margin:10px 0 0;color:var(--muted)}
+
+/* Footer */
+footer{background:var(--dark);color:#d5d9e0;padding:56px 0 90px}
+footer a{color:#fff}
+footer .cols{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer strong{color:#fff}
+footer .small{font-size:.85rem;margin-top:32px;color:#9aa1ad}
+
+/* Cookies y WhatsApp flotante */
+#cookies{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#111;color:#fff;padding:16px 20px;display:none;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
+#cookies .wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+#cookies p{margin:0;flex:1;min-width:240px}
+#cookies .btn.ghost{color:#fff;border-color:#fff}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:40;background:#1a7f3c;color:#fff;border-radius:999px;padding:14px 20px;font-weight:800;text-decoration:none;box-shadow:var(--shadow)}
+.wa-float:hover{background:#14652f}
+.hidden{display:none!important}
+
+/* Animación de entrada */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn,.card{transition:none}
+}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #0a58ca;outline-offset:2px}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#inicio" aria-label="SOLFIT, inicio">
+      <img class="logo" src="assets/logo-solfit.png" alt="SOLFIT" width="120" height="36" onerror="this.outerHTML='<span class=&quot;logo-fallback&quot;>SOLFIT</span>'">
+    </a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav class="main" id="nav" aria-label="Principal">
+      <a href="#presencial">Presencial</a>
+      <a href="#online">Online</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#app">La app</a>
+      <a href="#sol">Sobre Sol</a>
+      <div class="m-btns">
+        <a class="btn ghost sm" href="https://app.solfitonline.com">Ingresar</a>
+        <a class="btn sm" href="#caminos">Ver planes</a>
+      </div>
+    </nav>
+    <div class="hdr-btns">
+      <a class="btn ghost sm" href="https://app.solfitonline.com">Ingresar</a>
+      <a class="btn sm" href="#caminos">Ver planes</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Entrenamiento con método</span>
+      <h1>Deja de improvisar. Entrena con sistema.</h1>
+      <p class="lead">Entrenamiento con método: en el gimnasio, online o a tu ritmo con cursos.</p>
+      <div class="cta-row">
+        <a class="btn" href="#presencial">Entrena en el gimnasio</a>
+        <a class="btn ghost" href="#online">Entrena online</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/sol-hero.jpg" alt="Sol, entrenadora de SOLFIT" onerror="this.outerHTML='<span class=&quot;sol&quot;>[SOL: foto real de Sol]</span>'">
+    </div>
+  </div>
+</section>
+
+<section class="alt" style="padding:36px 0">
+  <div class="wrap proof reveal">
+    <div><strong><span class="sol">[SOL: confirmar «+5 años»]</span></strong><span class="l">de experiencia</span></div>
+    <div><strong><span class="sol">[SOL: cifra]</span></strong><span class="l">alumnos</span></div>
+    <div><strong>Balanza Omron</strong><span class="l">Evaluación corporal <span class="sol">[SOL: confirmar]</span></span></div>
+  </div>
+</section>
+
+<section id="caminos">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Tres caminos</span><h2>Elige cómo quieres entrenar</h2></div>
+    <div class="grid g3">
+      <div class="card lift reveal"><div class="icon" aria-hidden="true">🏋️</div><h3>Presencial</h3><p>Entrena en el gimnasio con acompañamiento.</p><a class="btn sm" href="#presencial">Ver presencial</a></div>
+      <div class="card lift reveal"><div class="icon" aria-hidden="true">📱</div><h3>Online</h3><p>Entrenamiento guiado desde donde estés.</p><a class="btn sm" href="#online">Ver online</a></div>
+      <div class="card lift reveal"><div class="icon" aria-hidden="true">🎓</div><h3>Cursos</h3><p>Aprende a tu ritmo. Lista de espera abierta.</p><a class="btn sm" href="#cursos">Ver cursos</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="metodo">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">El método</span><h2>4 pilares para sostener el cambio</h2></div>
+    <div class="grid g4">
+      <div class="card reveal"><div class="icon" aria-hidden="true">💪</div><h3>Entrenamiento</h3><p>Progresión planificada, no al azar.</p></div>
+      <div class="card reveal"><div class="icon" aria-hidden="true">🥗</div><h3>Nutrición</h3><p>Hábitos de alimentación simples y sostenibles.</p></div>
+      <div class="card reveal"><div class="icon" aria-hidden="true">😴</div><h3>Descanso</h3><p>Dormir y recuperar también es parte del plan.</p></div>
+      <div class="card reveal"><div class="icon" aria-hidden="true">🧠</div><h3>Mentalidad</h3><p>Constancia y bienestar para sostener el cambio.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="presencial">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Presencial</span><h2>Entrena en Las Trancas</h2><p class="lead">Elige un plan mensual o prueba con un pase.</p></div>
+    <h3>Planes mensuales</h3>
+    <div class="grid g3">
+      <div class="card plan lift reveal"><h3>Open Gym</h3><div class="price">$38.000<small> /mes</small></div><p class="grow">Acceso libre al gimnasio.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+      <div class="card plan lift reveal"><h3>Open Gym con asesoría</h3><div class="price">$50.000<small> /mes</small></div><p class="grow">Acceso libre con guía profesional.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+      <div class="card plan lift reveal"><h3>Personalizado grupal</h3><div class="price">$72.000<small> /mes</small></div><p class="grow">8 clases al mes.<br>Martes y jueves 9:00 y 10:30 · viernes 10:30.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+      <div class="card plan lift reveal"><h3>1 a 1</h3><div class="price">$200.000<small> /mes</small></div><p class="grow">Atención individual.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+      <div class="card plan lift reveal"><h3>2x1</h3><div class="price">$250.000<small> /mes</small></div><p class="grow">Entrena acompañado/a.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+    </div>
+    <h3 style="margin-top:36px">Pases</h3>
+    <div class="table-wrap reveal">
+      <table>
+        <tr><th>Pase</th><th style="text-align:right">Precio</th></tr>
+        <tr><td>Diario</td><td class="p">$8.000</td></tr>
+        <tr><td>Semanal</td><td class="p">$20.000</td></tr>
+        <tr><td>2 semanas</td><td class="p">$30.000</td></tr>
+      </table>
+    </div>
+    <h3 style="margin-top:36px">Dónde y cuándo</h3>
+    <div class="where">
+      <div class="card"><p><strong>Dirección</strong><br><span class="sol">[SOL: dirección exacta]</span></p><p><strong>Horarios</strong><br><span class="sol">[SOL: horarios del gimnasio]</span></p></div>
+      <div class="hero-photo"><span class="sol">[Mapa: insertar Google Maps con la dirección exacta]</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="online">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Online</span><h2>Entrenamiento online</h2></div>
+    <div class="grid g3">
+      <div class="card reveal"><h3>Qué incluye</h3><p><span class="sol">[SOL: definir si es asesoría con ella o el catálogo a $19.990 al mes]</span></p></div>
+      <div class="card reveal"><h3>Cómo funciona</h3><p>Entras a la app, sigues tu plan y registras tu avance. <span class="sol">[SOL: detallar]</span></p></div>
+      <div class="card reveal"><h3>Empieza</h3><p>Escríbenos y te contamos las opciones.</p><a class="btn sm" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20entrenar%20online">Consultar por WhatsApp</a> <span class="sol">[SOL: número]</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cursos">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Cursos</span><h2>Cursos: lista de espera</h2><p class="lead">Estamos preparando cursos para entrenar a tu ritmo. <span class="sol">[SOL: una línea de qué viene]</span></p></div>
+    <div class="grid g3" style="margin-bottom:22px">
+      <div class="card reveal"><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 1 <span class="sol">[SOL: nombre]</span></h3></div>
+      <div class="card reveal"><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 2 <span class="sol">[SOL: nombre]</span></h3></div>
+      <div class="card reveal"><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 3 <span class="sol">[SOL: nombre]</span></h3></div>
+    </div>
+    <p class="notice"><strong>Acceso por 12 meses desde la compra.</strong></p>
+    <form id="waitlist" class="card" style="max-width:600px;margin-top:22px" novalidate>
+      <h3>Únete y recibe un reto gratis de 7 días</h3>
+      <label for="wl-contacto">Correo o WhatsApp</label>
+      <input type="text" id="wl-contacto" name="contacto" autocomplete="email" required>
+      <div class="check">
+        <input type="checkbox" id="wl-consent" name="consent">
+        <label for="wl-consent">Acepto que SOLFIT use mi correo o WhatsApp para avisarme del lanzamiento de los cursos y enviarme el reto gratis de 7 días. Puedo retirar mi consentimiento cuando quiera.</label>
+      </div>
+      <button class="btn" type="submit">Anotarme</button>
+      <p id="wl-msg" role="status" style="margin:10px 0 0"></p>
+    </form>
+  </div>
+</section>
+
+<section class="alt" id="app">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">La app</span><h2>Tu plan en el bolsillo</h2><p class="lead">Incluida en todos los planes.</p></div>
+    <div class="hero-photo"><span class="sol">[JOSÉ: mockup actual de la app → assets/app-mockup.png]</span></div>
+  </div>
+</section>
+
+<section id="compra">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Compra</span><h2>Cómo funciona la compra</h2></div>
+    <ol class="steps">
+      <li class="reveal"><strong>Eliges</strong> tu plan</li>
+      <li class="reveal"><strong>Pagas</strong> con Mercado Pago</li>
+      <li class="reveal"><strong>Creas tu cuenta</strong> con el mismo correo del pago</li>
+      <li class="reveal"><strong>Entras</strong> a la app</li>
+    </ol>
+    <p><strong>Pago seguro con Mercado Pago.</strong></p>
+    <p class="notice">¿Usaste otro correo al pagar? Escríbenos por WhatsApp y vinculamos tu cuenta. <span class="sol">[SOL: número]</span></p>
+  </div>
+</section>
+
+<section class="alt" id="sol">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Sobre Sol</span><h2>Quién te entrena</h2></div>
+    <div class="grid g3">
+      <div class="hero-photo"><span class="sol">[SOL: foto real]</span></div>
+      <div class="card reveal"><h3>Historia</h3><p><span class="sol">[SOL: su historia]</span></p></div>
+      <div class="card reveal"><h3>Certificaciones</h3><p><span class="sol">[SOL: lista de certificaciones]</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonios: oculta hasta tener 3 a 5 con permiso escrito. Quita la clase "hidden" cuando esten. -->
+<section id="testimonios" class="hidden">
+  <div class="wrap">
+    <h2>Lo que dicen nuestros alumnos</h2>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>Preguntas frecuentes</h2></div>
+    <details><summary>Cancelación</summary><p><span class="sol">[SOL/JOSÉ: política de cancelación]</span></p></details>
+    <details><summary>Devolución y retracto</summary><p><span class="sol">[JOSÉ: texto legal, coherente con Términos y Devoluciones]</span></p></details>
+    <details><summary>¿Qué pasa con las clases del grupal que no uso?</summary><p><span class="sol">[SOL: regla de clases no usadas]</span></p></details>
+    <details><summary>¿Cómo entro a la app?</summary><p>Crea tu cuenta con el mismo correo que usaste al pagar y entra en app.solfitonline.com.</p></details>
+    <details><summary>¿Cuándo salen los cursos?</summary><p>Aún no hay fecha. Anótate en la lista de espera y te avisamos. <span class="sol">[SOL: fecha estimada]</span> El acceso es por 12 meses desde la compra.</p></details>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <strong>SOLFIT</strong>
+      <p><a href="https://wa.me/56900000000">WhatsApp</a> <span class="sol">[SOL: número]</span><br>
+      <a href="https://instagram.com/solfitgym">Instagram @solfitgym</a></p>
+    </div>
+    <div>
+      <p>Razón social: <span class="sol">[razón social]</span><br>
+      RUT: <span class="sol">[RUT]</span><br>
+      Domicilio: <span class="sol">[domicilio]</span><br>
+      Correo: <span class="sol">[correo]</span></p>
+    </div>
+    <div>
+      <p><a href="#">Privacidad</a><br><a href="#">Términos</a><br><a href="#">Devoluciones</a><br><a href="#">Borrar cuenta</a></p>
+    </div>
+  </div>
+  <div class="wrap"><p class="small">© SOLFIT. Todos los derechos reservados.</p></div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/56900000000" aria-label="Escribir por WhatsApp">WhatsApp</a>
+
+<div id="cookies" role="dialog" aria-label="Aviso de cookies">
+  <div class="wrap">
+    <p>Usamos cookies de medición y publicidad (píxel de Meta) solo si las aceptas.</p>
+    <button class="btn sm" id="ck-yes">Aceptar</button>
+    <button class="btn ghost sm" id="ck-no">Rechazar</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* Menú móvil */
+  var b=document.getElementById('burger'), n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+
+  /* Animación de entrada */
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  }else{els.forEach(function(e){e.classList.add('in')})}
+
+  /* Cookies: el píxel de Meta solo se carga después de aceptar */
+  var KEY='solfit_cookies';
+  var PIXEL_ID='REEMPLAZAR_PIXEL_ID';
+  function loadPixel(){
+    if(window.fbq||PIXEL_ID==='REEMPLAZAR_PIXEL_ID')return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',PIXEL_ID);fbq('track','PageView');
+  }
+  var box=document.getElementById('cookies'), v=null;
+  try{v=localStorage.getItem(KEY)}catch(e){}
+  if(v==='yes'){loadPixel()} else if(v!=='no'){box.style.display='block'}
+  function set(x){try{localStorage.setItem(KEY,x)}catch(e){} box.style.display='none'; if(x==='yes')loadPixel()}
+  document.getElementById('ck-yes').onclick=function(){set('yes')};
+  document.getElementById('ck-no').onclick=function(){set('no')};
+
+  /* Lista de espera: aún no está conectada a ningún servicio */
+  var f=document.getElementById('waitlist'), msg=document.getElementById('wl-msg');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var c=document.getElementById('wl-contacto').value.trim();
+    if(!c){msg.textContent='Escribe tu correo o WhatsApp.';return}
+    if(!document.getElementById('wl-consent').checked){msg.textContent='Necesitamos tu consentimiento para anotarte.';return}
+    msg.textContent='Vista previa: el formulario aún no está conectado, no se guardó tu dato.';
+    f.reset();
+  });
+})();
+</script>
+</body>
+</html>
