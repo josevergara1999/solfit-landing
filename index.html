@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0f1115">
-<!-- SEO local: la ciudad va aqui y en la seccion Presencial, no en el hero. [SOL: confirmar ciudad/zona] -->
+<meta name="theme-color" content="#1b503c">
 <title>SOLFIT | Entrenamiento con método · Presencial, online y cursos · Las Trancas</title>
 <meta name="description" content="Entrena con sistema en SOLFIT: gimnasio en Las Trancas, entrenamiento online y cursos. Planes mensuales y pases diarios.">
 <meta property="og:type" content="website">
@@ -16,57 +15,66 @@
 </script>
 <style>
 :root{
-  /* José decide colores y tipografías: cambia solo estas variables */
-  --bg:#ffffff; --bg-alt:#f4f5f7; --text:#15171a; --muted:#4a4f57;
-  --primary:#d9480f; --primary-dark:#b53a0a; --primary-text:#ffffff;
-  --dark:#0f1115; --dark-2:#1b1e24; --line:#dcdfe4;
+  /* Paleta tomada del logo SOLFIT. José puede ajustar solo estas variables */
+  --green:#1b503c; --green-dark:#0f2f23; --green-2:#256a4e; --sage:#7da57a; --sage-light:#e6efe4;
+  --orange:#f7941d; --orange-dark:#d97706; --orange-text:#7a3d00;
+  --bg:#ffffff; --bg-alt:#f3f7f2; --text:#14211b; --muted:#43524a; --line:#d5e0d3;
   --font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --radius:16px; --max:1120px;
-  --shadow:0 10px 30px rgba(15,17,21,.08);
+  --radius:18px; --max:1120px; --shadow:0 14px 34px rgba(15,47,35,.14);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{margin:0;font-family:var(--font);font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);-webkit-text-size-adjust:100%}
-img{max-width:100%;height:auto;display:block}
+img,svg{max-width:100%;display:block}
 a{color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-section{padding:72px 0}
+section{padding:80px 0}
 section.alt{background:var(--bg-alt)}
-h1,h2,h3{line-height:1.12;margin:0 0 12px;letter-spacing:-.02em}
-h1{font-size:clamp(2.2rem,7vw,4rem);font-weight:900}
-h2{font-size:clamp(1.7rem,4.5vw,2.5rem);font-weight:800}
+section.dark{background:linear-gradient(160deg,var(--green-dark),var(--green));color:#fff}
+h1,h2,h3{line-height:1.1;margin:0 0 12px;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,8vw,4.6rem);font-weight:900}
+h2{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800}
 h3{font-size:1.2rem}
-.eyebrow{display:inline-block;font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:10px}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green-2);margin-bottom:10px}
+.dark .eyebrow,.hero .eyebrow{color:var(--orange)}
 .lead{font-size:1.15rem;color:var(--muted);max-width:60ch}
-.sec-head{margin-bottom:32px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--primary);background:var(--primary);color:var(--primary-text);cursor:pointer;font-size:16px;font-family:inherit;transition:transform .15s,background .15s,box-shadow .15s}
-.btn:hover{background:var(--primary-dark);border-color:var(--primary-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
-.btn.ghost{background:transparent;color:var(--text);border-color:var(--text)}
-.btn.ghost:hover{background:var(--text);color:#fff;border-color:var(--text)}
+.dark .lead,.hero .lead{color:#d6e6dc}
+.sec-head{margin-bottom:34px}
+.hl{color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 26px;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid var(--orange);background:var(--orange);color:#201000;cursor:pointer;font-size:16px;font-family:inherit;transition:transform .15s,background .15s,box-shadow .15s}
+.btn:hover{background:var(--orange-dark);border-color:var(--orange-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.ghost{background:transparent;color:var(--green);border-color:var(--green)}
+.btn.ghost:hover{background:var(--green);color:#fff}
+.hero .btn.ghost,.dark .btn.ghost{color:#fff;border-color:#fff}
+.hero .btn.ghost:hover,.dark .btn.ghost:hover{background:#fff;color:var(--green)}
 .btn.sm{min-height:42px;padding:8px 18px}
+.btn.big{min-height:56px;padding:14px 34px;font-size:1.1rem}
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(247,148,29,.6)}70%{box-shadow:0 0 0 16px rgba(247,148,29,0)}100%{box-shadow:0 0 0 0 rgba(247,148,29,0)}}
 .grid{display:grid;gap:20px}
 .g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .g4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .2s,box-shadow .2s}
-.card.lift:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.price{font-size:2rem;font-weight:900;letter-spacing:-.02em}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card.lift:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--sage)}
+.price{font-size:2.1rem;font-weight:900;letter-spacing:-.02em;color:var(--green)}
 .price small{font-size:.9rem;font-weight:600;color:var(--muted)}
 .sol{background:#fff3a3;color:#222;padding:1px 6px;border-radius:4px;font-size:.9em}
-.pill{display:inline-block;background:#fde8dc;color:#7a2a06;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px}
-.icon{width:44px;height:44px;border-radius:12px;background:#fde8dc;color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:14px}
+.pill{display:inline-block;background:#ffe9cc;color:var(--orange-text);font-weight:800;font-size:.8rem;padding:4px 12px;border-radius:999px}
+.icon{width:48px;height:48px;border-radius:14px;background:var(--sage-light);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:14px}
+.demo-tag{display:inline-block;background:#fff3a3;color:#222;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:4px}
 
 /* Header */
 .skip{position:absolute;left:-999px;top:8px;background:#000;color:#fff;padding:10px 16px;z-index:100;border-radius:8px}
 .skip:focus{left:8px}
-header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px}
-.logo{height:36px;width:auto}
-.logo-fallback{font-weight:900;letter-spacing:.1em;font-size:1.35rem}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:16px;padding-top:8px;padding-bottom:8px}
+.logo{height:46px;width:auto}
 nav.main{display:flex;gap:20px;flex:1;margin-left:12px}
-nav.main a{text-decoration:none;font-weight:600;padding:8px 2px}
-nav.main a:hover{color:var(--primary)}
+nav.main a{text-decoration:none;font-weight:700;padding:8px 2px;border-bottom:2px solid transparent}
+nav.main a:hover{color:var(--green-2);border-color:var(--orange)}
 .hdr-btns{display:flex;gap:8px;margin-left:auto}
-.burger{display:none;background:none;border:2px solid var(--text);border-radius:10px;width:46px;height:46px;font-size:1.3rem;cursor:pointer}
+.burger{display:none;background:none;border:2px solid var(--green);color:var(--green);border-radius:10px;width:46px;height:46px;font-size:1.3rem;cursor:pointer}
+#progress{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:var(--orange)}
 @media(max-width:860px){
   .burger{display:block;margin-left:auto}
   .hdr-btns{display:none}
@@ -78,44 +86,74 @@ nav.main a:hover{color:var(--primary)}
 @media(min-width:861px){nav.main .m-btns{display:none}}
 
 /* Hero */
-.hero{background:linear-gradient(135deg,var(--dark) 0%,var(--dark-2) 100%);color:#fff;padding:80px 0 72px}
-.hero .wrap{display:grid;gap:40px;align-items:center;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
-.hero .lead{color:#d5d9e0}
-.hero .eyebrow{color:#ffa879}
-.hero .btn.ghost{color:#fff;border-color:#fff}
-.hero .btn.ghost:hover{background:#fff;color:var(--dark)}
-.hero-photo{background:#e9ebef;color:#222;border-radius:var(--radius);min-height:320px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;overflow:hidden}
-.hero-photo img{border-radius:var(--radius);width:100%;object-fit:cover}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 100%,#2c7a57 0%,var(--green) 40%,var(--green-dark) 100%);color:#fff;padding:90px 0 80px}
+.hero .wrap{position:relative;z-index:2;display:grid;gap:40px;align-items:center;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.sunrays{position:absolute;right:-120px;bottom:-260px;width:760px;height:760px;opacity:.22;z-index:1;animation:spin 120s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.badge-row span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:.9rem;font-weight:600}
+.ph{position:relative;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#2c7a57,#0f2f23);min-height:320px;display:flex;align-items:flex-end;justify-content:flex-start;color:#fff}
+.ph svg.art{position:absolute;inset:0;width:100%;height:100%}
+.ph .cap{position:relative;z-index:2;padding:14px 16px;font-size:.8rem;background:linear-gradient(transparent,rgba(0,0,0,.65));width:100%}
+.ph img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.tilt{transition:transform .15s;will-change:transform}
+
+/* Cuenta regresiva y cupos */
+.launch{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center}
+.cd{display:flex;gap:12px;margin:18px 0}
+.cd div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:14px;padding:12px 6px;min-width:74px;text-align:center}
+.cd strong{display:block;font-size:2rem;font-weight:900;color:var(--orange);font-variant-numeric:tabular-nums}
+.cd span{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
+.bar{height:12px;background:rgba(255,255,255,.18);border-radius:999px;overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),#ffc266);border-radius:999px;transition:width 1.4s ease}
 
 /* Prueba social */
 .proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;text-align:center}
-.proof div{padding:14px}
-.proof strong{display:block;font-size:1.5rem;font-weight:900}
+.proof strong{display:block;font-size:2rem;font-weight:900;color:var(--green)}
 .proof span.l{color:var(--muted);font-size:.95rem}
+
+/* Quiz */
+.quiz{max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);color:var(--text)}
+.quiz .opts{display:grid;gap:10px;margin:16px 0}
+.quiz .opt{text-align:left;background:var(--bg-alt);border:2px solid var(--line);border-radius:14px;padding:14px 18px;font-size:16px;font-family:inherit;cursor:pointer;font-weight:600;transition:all .15s}
+.quiz .opt:hover{border-color:var(--orange);background:#fff7ea;transform:translateX(4px)}
+.qbar{height:6px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:18px}
+.qbar i{display:block;height:100%;width:0;background:var(--orange);transition:width .3s}
 
 /* Presencial */
 .plan{position:relative;display:flex;flex-direction:column;gap:6px}
 .plan p{margin:0;color:var(--muted)}
 .plan .btn{margin-top:auto;align-self:flex-start}
 .plan .grow{flex:1}
+.plan.glow{border-color:var(--orange);box-shadow:0 0 0 3px rgba(247,148,29,.35),var(--shadow);transform:translateY(-4px)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{background:#fff;border:2px solid var(--line);border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;font-size:15px;font-family:inherit}
+.chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
+.plan.off{display:none}
 .table-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
 td,th{padding:14px 18px;border-bottom:1px solid var(--line);text-align:left}
-th{background:var(--bg-alt)}
+th{background:var(--sage-light)}
 tr:last-child td{border-bottom:0}
-td.p{font-weight:800;text-align:right}
+td.p{font-weight:800;text-align:right;color:var(--green)}
 .where{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:20px}
+
+/* Cursos */
+.course{position:relative;overflow:hidden}
+.course .lock{position:absolute;top:14px;right:14px;font-size:1.2rem}
+.course::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 40%,rgba(247,148,29,.18),transparent 60%);transform:translateX(-100%);transition:transform .6s}
+.course:hover::after{transform:translateX(100%)}
 
 /* Compra */
 .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 20px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
 .steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
-.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--primary);color:#fff;font-weight:900;margin-bottom:12px}
-.notice{background:#fff;border-left:5px solid var(--primary);padding:14px 18px;border-radius:8px}
+.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#201000;font-weight:900;margin-bottom:12px}
+.notice{background:#fff;border-left:5px solid var(--orange);padding:14px 18px;border-radius:8px}
 
-/* Formularios */
+/* Formularios y FAQ */
 form label{display:block;margin:12px 0 6px;font-weight:600}
-input[type=text],input[type=email]{width:100%;padding:14px;font-size:16px;border:1px solid #767b84;border-radius:10px;font-family:inherit}
+input[type=text],input[type=email]{width:100%;padding:14px;font-size:16px;border:1px solid #6b7a72;border-radius:10px;font-family:inherit}
 .check{display:flex;gap:12px;align-items:flex-start;margin:16px 0}
 .check input{margin-top:4px;width:22px;height:22px;flex:none}
 .check label{margin:0;font-weight:400}
@@ -124,28 +162,31 @@ summary{font-weight:700;cursor:pointer;font-size:1.05rem}
 details p{margin:10px 0 0;color:var(--muted)}
 
 /* Footer */
-footer{background:var(--dark);color:#d5d9e0;padding:56px 0 90px}
+footer{background:var(--green-dark);color:#cfe0d5;padding:56px 0 110px}
 footer a{color:#fff}
-footer .cols{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 footer strong{color:#fff}
-footer .small{font-size:.85rem;margin-top:32px;color:#9aa1ad}
+footer .cols{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer .small{font-size:.85rem;margin-top:32px;color:#9fb8a8}
 
-/* Cookies y WhatsApp flotante */
-#cookies{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#111;color:#fff;padding:16px 20px;display:none;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
+/* Flotantes */
+#cookies{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#0b1f17;color:#fff;padding:16px 20px;display:none;box-shadow:0 -6px 20px rgba(0,0,0,.25)}
 #cookies .wrap{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 #cookies p{margin:0;flex:1;min-width:240px}
 #cookies .btn.ghost{color:#fff;border-color:#fff}
 .wa-float{position:fixed;right:16px;bottom:16px;z-index:40;background:#1a7f3c;color:#fff;border-radius:999px;padding:14px 20px;font-weight:800;text-decoration:none;box-shadow:var(--shadow)}
 .wa-float:hover{background:#14652f}
+.sticky-cta{position:fixed;left:12px;bottom:12px;z-index:40;display:none}
+@media(max-width:700px){.sticky-cta{display:inline-flex}.wa-float{padding:14px 16px}}
+#toast{position:fixed;left:16px;bottom:80px;z-index:45;background:#fff;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:12px;padding:12px 16px;box-shadow:var(--shadow);max-width:290px;font-size:.9rem;transform:translateY(30px);opacity:0;transition:all .4s;pointer-events:none}
+#toast.show{transform:none;opacity:1}
 .hidden{display:none!important}
 
-/* Animación de entrada */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
-  .btn,.card{transition:none}
+  .btn,.card,.sunrays,.pulse{transition:none;animation:none}
 }
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #0a58ca;outline-offset:2px}
 </style>
@@ -155,9 +196,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 
 <header class="top">
   <div class="wrap">
-    <a href="#inicio" aria-label="SOLFIT, inicio">
-      <img class="logo" src="assets/logo-solfit.png" alt="SOLFIT" width="120" height="36" onerror="this.outerHTML='<span class=&quot;logo-fallback&quot;>SOLFIT</span>'">
-    </a>
+    <a href="#inicio" aria-label="SOLFIT, inicio"><img class="logo" src="assets/logo-solfit.jpg" alt="SOLFIT" width="46" height="46"></a>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">☰</button>
     <nav class="main" id="nav" aria-label="Principal">
       <a href="#presencial">Presencial</a>
@@ -175,43 +214,84 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
       <a class="btn sm" href="#caminos">Ver planes</a>
     </div>
   </div>
+  <div id="progress"></div>
 </header>
 
 <main id="contenido">
 
 <section class="hero" id="inicio">
+  <svg class="sunrays" viewBox="-100 -100 200 200" aria-hidden="true"><g fill="#f7941d"><circle r="30"/><g id="rays"></g></g></svg>
   <div class="wrap">
     <div>
       <span class="eyebrow">Entrenamiento con método</span>
-      <h1>Deja de improvisar. Entrena con sistema.</h1>
+      <h1>Deja de improvisar.<br><span class="hl">Entrena con sistema.</span></h1>
       <p class="lead">Entrenamiento con método: en el gimnasio, online o a tu ritmo con cursos.</p>
       <div class="cta-row">
-        <a class="btn" href="#presencial">Entrena en el gimnasio</a>
-        <a class="btn ghost" href="#online">Entrena online</a>
+        <a class="btn big pulse" href="#presencial">Entrena en el gimnasio</a>
+        <a class="btn big ghost" href="#online">Entrena online</a>
       </div>
+      <div class="badge-row"><span>🏋️ Presencial</span><span>📱 Online</span><span>🎓 Cursos</span></div>
     </div>
-    <div class="hero-photo">
-      <img src="assets/sol-hero.jpg" alt="Sol, entrenadora de SOLFIT" onerror="this.outerHTML='<span class=&quot;sol&quot;>[SOL: foto real de Sol]</span>'">
+    <div class="ph tilt" id="heroPh" style="min-height:420px">
+      <img class="real" src="assets/sol-hero.jpg" alt="Sol, entrenadora de SOLFIT" onerror="this.remove()">
+      <svg class="art" viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7941d"/><stop offset="1" stop-color="#1b503c"/></linearGradient></defs>
+        <rect width="400" height="420" fill="url(#sky)"/>
+        <circle cx="200" cy="230" r="70" fill="#ffd08a" opacity=".85"/>
+        <path d="M0 300 L70 210 L120 270 L190 190 L260 280 L320 220 L400 300 L400 420 L0 420Z" fill="#0f2f23"/>
+        <rect x="70" y="330" width="260" height="10" fill="#e6efe4"/><rect x="60" y="305" width="12" height="60" fill="#e6efe4"/><rect x="328" y="305" width="12" height="60" fill="#e6efe4"/>
+      </svg>
+      <div class="cap"><span class="demo-tag">Imagen de prueba</span> Aquí va la foto real de Sol <span class="sol">[SOL]</span></div>
     </div>
   </div>
 </section>
 
-<section class="alt" style="padding:36px 0">
+<section class="alt" style="padding:44px 0">
   <div class="wrap proof reveal">
-    <div><strong><span class="sol">[SOL: confirmar «+5 años»]</span></strong><span class="l">de experiencia</span></div>
+    <div><strong><span class="sol">[SOL: «+5 años»]</span></strong><span class="l">de experiencia (solo si Sol lo confirma)</span></div>
     <div><strong><span class="sol">[SOL: cifra]</span></strong><span class="l">alumnos</span></div>
     <div><strong>Balanza Omron</strong><span class="l">Evaluación corporal <span class="sol">[SOL: confirmar]</span></span></div>
   </div>
 </section>
 
+<section class="dark" id="lanzamiento">
+  <div class="wrap launch">
+    <div class="reveal">
+      <span class="eyebrow">Lanzamiento de cursos <span class="demo-tag">DEMO: fecha y cupos de prueba</span></span>
+      <h2>Los cursos están por abrir. Entra primero.</h2>
+      <p class="lead">Quienes se anotan en la lista de espera reciben el aviso antes que nadie y un reto gratis de 7 días.</p>
+      <div class="cd" id="cd" aria-live="off">
+        <div><strong id="cd-d">00</strong><span>días</span></div>
+        <div><strong id="cd-h">00</strong><span>horas</span></div>
+        <div><strong id="cd-m">00</strong><span>min</span></div>
+        <div><strong id="cd-s">00</strong><span>seg</span></div>
+      </div>
+      <div><strong id="cupos-txt">Cupos del reto: —</strong></div>
+      <div class="bar" role="progressbar" aria-label="Cupos del reto ocupados"><i id="cupos-bar"></i></div>
+      <p style="margin-top:20px"><a class="btn big pulse" href="#waitlist">Quiero mi lugar en la lista</a></p>
+    </div>
+    <div class="ph tilt reveal" style="min-height:300px">
+      <svg class="art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="400" height="300" fill="#0f2f23"/>
+        <g stroke="#f7941d" stroke-width="6" stroke-linecap="round" opacity=".8"><line x1="200" y1="40" x2="200" y2="90"/><line x1="120" y1="70" x2="150" y2="110"/><line x1="280" y1="70" x2="250" y2="110"/><line x1="70" y1="140" x2="120" y2="150"/><line x1="330" y1="140" x2="280" y2="150"/></g>
+        <path d="M150 170a50 50 0 0 1 100 0z" fill="#f7941d"/>
+        <rect x="60" y="180" width="280" height="10" fill="#7da57a"/><rect x="48" y="150" width="14" height="70" fill="#7da57a"/><rect x="338" y="150" width="14" height="70" fill="#7da57a"/>
+        <path d="M80 260 L140 210 L190 250 L250 205 L320 260Z" fill="none" stroke="#7da57a" stroke-width="5"/>
+      </svg>
+      <div class="cap"><span class="demo-tag">Imagen de prueba</span></div>
+    </div>
+  </div>
+</section>
+
 <section id="caminos">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Tres caminos</span><h2>Elige cómo quieres entrenar</h2></div>
+    <div class="sec-head reveal"><span class="eyebrow">Tres caminos</span><h2>¿Cuál es el tuyo?</h2><p class="lead">Elige directo o responde 3 preguntas y te lo recomendamos.</p></div>
     <div class="grid g3">
       <div class="card lift reveal"><div class="icon" aria-hidden="true">🏋️</div><h3>Presencial</h3><p>Entrena en el gimnasio con acompañamiento.</p><a class="btn sm" href="#presencial">Ver presencial</a></div>
       <div class="card lift reveal"><div class="icon" aria-hidden="true">📱</div><h3>Online</h3><p>Entrenamiento guiado desde donde estés.</p><a class="btn sm" href="#online">Ver online</a></div>
       <div class="card lift reveal"><div class="icon" aria-hidden="true">🎓</div><h3>Cursos</h3><p>Aprende a tu ritmo. Lista de espera abierta.</p><a class="btn sm" href="#cursos">Ver cursos</a></div>
     </div>
+    <div class="quiz reveal" id="quiz" style="margin-top:40px" aria-live="polite"></div>
   </div>
 </section>
 
@@ -219,10 +299,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">El método</span><h2>4 pilares para sostener el cambio</h2></div>
     <div class="grid g4">
-      <div class="card reveal"><div class="icon" aria-hidden="true">💪</div><h3>Entrenamiento</h3><p>Progresión planificada, no al azar.</p></div>
-      <div class="card reveal"><div class="icon" aria-hidden="true">🥗</div><h3>Nutrición</h3><p>Hábitos de alimentación simples y sostenibles.</p></div>
-      <div class="card reveal"><div class="icon" aria-hidden="true">😴</div><h3>Descanso</h3><p>Dormir y recuperar también es parte del plan.</p></div>
-      <div class="card reveal"><div class="icon" aria-hidden="true">🧠</div><h3>Mentalidad</h3><p>Constancia y bienestar para sostener el cambio.</p></div>
+      <div class="card lift reveal"><div class="icon" aria-hidden="true">💪</div><h3>Entrenamiento</h3><p>Progresión planificada, no al azar.</p></div>
+      <div class="card lift reveal"><div class="icon" aria-hidden="true">🥗</div><h3>Nutrición</h3><p>Hábitos de alimentación simples y sostenibles.</p></div>
+      <div class="card lift reveal"><div class="icon" aria-hidden="true">😴</div><h3>Descanso</h3><p>Dormir y recuperar también es parte del plan.</p></div>
+      <div class="card lift reveal"><div class="icon" aria-hidden="true">🧠</div><h3>Mentalidad</h3><p>Constancia y bienestar para sostener el cambio.</p></div>
     </div>
   </div>
 </section>
@@ -230,13 +310,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <section id="presencial">
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Presencial</span><h2>Entrena en Las Trancas</h2><p class="lead">Elige un plan mensual o prueba con un pase.</p></div>
-    <h3>Planes mensuales</h3>
-    <div class="grid g3">
-      <div class="card plan lift reveal"><h3>Open Gym</h3><div class="price">$38.000<small> /mes</small></div><p class="grow">Acceso libre al gimnasio.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
-      <div class="card plan lift reveal"><h3>Open Gym con asesoría</h3><div class="price">$50.000<small> /mes</small></div><p class="grow">Acceso libre con guía profesional.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
-      <div class="card plan lift reveal"><h3>Personalizado grupal</h3><div class="price">$72.000<small> /mes</small></div><p class="grow">8 clases al mes.<br>Martes y jueves 9:00 y 10:30 · viernes 10:30.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
-      <div class="card plan lift reveal"><h3>1 a 1</h3><div class="price">$200.000<small> /mes</small></div><p class="grow">Atención individual.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
-      <div class="card plan lift reveal"><h3>2x1</h3><div class="price">$250.000<small> /mes</small></div><p class="grow">Entrena acompañado/a.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+    <div class="chips" role="group" aria-label="Filtrar planes">
+      <button class="chip" aria-pressed="true" data-f="all">Todos</button>
+      <button class="chip" aria-pressed="false" data-f="libre">Entreno solo/a</button>
+      <button class="chip" aria-pressed="false" data-f="guiado">Quiero guía</button>
+      <button class="chip" aria-pressed="false" data-f="premium">Atención personal</button>
+    </div>
+    <div class="grid g3" id="plans">
+      <div class="card plan lift reveal" data-t="libre"><h3>Open Gym</h3><div class="price">$38.000<small> /mes</small></div><p class="grow">Acceso libre al gimnasio.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+      <div class="card plan lift reveal" data-t="libre guiado"><h3>Open Gym con asesoría</h3><div class="price">$50.000<small> /mes</small></div><p class="grow">Acceso libre con guía profesional.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+      <div class="card plan lift reveal" data-t="guiado"><h3>Personalizado grupal</h3><div class="price">$72.000<small> /mes</small></div><p class="grow">8 clases al mes.<br>Martes y jueves 9:00 y 10:30 · viernes 10:30.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+      <div class="card plan lift reveal" data-t="premium guiado"><h3>1 a 1</h3><div class="price">$200.000<small> /mes</small></div><p class="grow">Atención individual.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
+      <div class="card plan lift reveal" data-t="premium"><h3>2x1</h3><div class="price">$250.000<small> /mes</small></div><p class="grow">Entrena acompañado/a.</p><a class="btn sm" href="#compra">Cómo comprar</a></div>
     </div>
     <h3 style="margin-top:36px">Pases</h3>
     <div class="table-wrap reveal">
@@ -250,7 +335,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
     <h3 style="margin-top:36px">Dónde y cuándo</h3>
     <div class="where">
       <div class="card"><p><strong>Dirección</strong><br><span class="sol">[SOL: dirección exacta]</span></p><p><strong>Horarios</strong><br><span class="sol">[SOL: horarios del gimnasio]</span></p></div>
-      <div class="hero-photo"><span class="sol">[Mapa: insertar Google Maps con la dirección exacta]</span></div>
+      <div class="ph" style="min-height:220px">
+        <svg class="art" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="220" fill="#e6efe4"/><path d="M0 150 L60 90 L110 130 L170 70 L240 140 L300 100 L400 160 L400 220 L0 220Z" fill="#7da57a"/><circle cx="320" cy="50" r="26" fill="#f7941d"/></svg>
+        <div class="cap"><span class="demo-tag">Imagen de prueba</span> Mapa: Google Maps con la dirección exacta <span class="sol">[SOL]</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -259,9 +347,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Online</span><h2>Entrenamiento online</h2></div>
     <div class="grid g3">
-      <div class="card reveal"><h3>Qué incluye</h3><p><span class="sol">[SOL: definir si es asesoría con ella o el catálogo a $19.990 al mes]</span></p></div>
-      <div class="card reveal"><h3>Cómo funciona</h3><p>Entras a la app, sigues tu plan y registras tu avance. <span class="sol">[SOL: detallar]</span></p></div>
-      <div class="card reveal"><h3>Empieza</h3><p>Escríbenos y te contamos las opciones.</p><a class="btn sm" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20entrenar%20online">Consultar por WhatsApp</a> <span class="sol">[SOL: número]</span></div>
+      <div class="card lift reveal"><h3>Qué incluye</h3><p><span class="sol">[SOL: definir si es asesoría con ella o el catálogo a $19.990 al mes]</span></p></div>
+      <div class="card lift reveal"><h3>Cómo funciona</h3><p>Entras a la app, sigues tu plan y registras tu avance. <span class="sol">[SOL: detallar]</span></p></div>
+      <div class="card lift reveal"><h3>Empieza</h3><p>Escríbenos y te contamos las opciones.</p><a class="btn sm" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20entrenar%20online">Consultar por WhatsApp</a> <span class="sol">[SOL: número]</span></div>
     </div>
   </div>
 </section>
@@ -270,12 +358,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Cursos</span><h2>Cursos: lista de espera</h2><p class="lead">Estamos preparando cursos para entrenar a tu ritmo. <span class="sol">[SOL: una línea de qué viene]</span></p></div>
     <div class="grid g3" style="margin-bottom:22px">
-      <div class="card reveal"><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 1 <span class="sol">[SOL: nombre]</span></h3></div>
-      <div class="card reveal"><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 2 <span class="sol">[SOL: nombre]</span></h3></div>
-      <div class="card reveal"><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 3 <span class="sol">[SOL: nombre]</span></h3></div>
+      <div class="card course reveal"><span class="lock" aria-hidden="true">🔒</span><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 1 <span class="sol">[SOL: nombre]</span></h3></div>
+      <div class="card course reveal"><span class="lock" aria-hidden="true">🔒</span><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 2 <span class="sol">[SOL: nombre]</span></h3></div>
+      <div class="card course reveal"><span class="lock" aria-hidden="true">🔒</span><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 3 <span class="sol">[SOL: nombre]</span></h3></div>
     </div>
     <p class="notice"><strong>Acceso por 12 meses desde la compra.</strong></p>
-    <form id="waitlist" class="card" style="max-width:600px;margin-top:22px" novalidate>
+    <form id="waitlist" class="card" style="max-width:620px;margin-top:22px" novalidate>
       <h3>Únete y recibe un reto gratis de 7 días</h3>
       <label for="wl-contacto">Correo o WhatsApp</label>
       <input type="text" id="wl-contacto" name="contacto" autocomplete="email" required>
@@ -283,7 +371,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
         <input type="checkbox" id="wl-consent" name="consent">
         <label for="wl-consent">Acepto que SOLFIT use mi correo o WhatsApp para avisarme del lanzamiento de los cursos y enviarme el reto gratis de 7 días. Puedo retirar mi consentimiento cuando quiera.</label>
       </div>
-      <button class="btn" type="submit">Anotarme</button>
+      <button class="btn big" type="submit">Anotarme</button>
       <p id="wl-msg" role="status" style="margin:10px 0 0"></p>
     </form>
   </div>
@@ -292,7 +380,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 <section class="alt" id="app">
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">La app</span><h2>Tu plan en el bolsillo</h2><p class="lead">Incluida en todos los planes.</p></div>
-    <div class="hero-photo"><span class="sol">[JOSÉ: mockup actual de la app → assets/app-mockup.png]</span></div>
+    <div class="ph tilt reveal" style="min-height:300px;max-width:640px">
+      <img class="real" src="assets/app-mockup.png" alt="La app de SOLFIT" onerror="this.remove()">
+      <svg class="art" viewBox="0 0 640 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="640" height="300" fill="#1b503c"/>
+        <rect x="260" y="20" width="120" height="260" rx="18" fill="#0f2f23" stroke="#7da57a" stroke-width="3"/>
+        <rect x="274" y="50" width="92" height="14" rx="4" fill="#f7941d"/><rect x="274" y="76" width="70" height="8" rx="3" fill="#7da57a"/>
+        <rect x="274" y="100" width="92" height="40" rx="8" fill="#256a4e"/><rect x="274" y="148" width="92" height="40" rx="8" fill="#256a4e"/><rect x="274" y="196" width="60" height="40" rx="8" fill="#f7941d"/>
+      </svg>
+      <div class="cap"><span class="demo-tag">Imagen de prueba</span> Aquí va el mockup real de la app <span class="sol">[JOSÉ]</span></div>
+    </div>
   </div>
 </section>
 
@@ -314,7 +411,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">Sobre Sol</span><h2>Quién te entrena</h2></div>
     <div class="grid g3">
-      <div class="hero-photo"><span class="sol">[SOL: foto real]</span></div>
+      <div class="ph reveal" style="min-height:280px">
+        <svg class="art" viewBox="0 0 300 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="280" fill="#7da57a"/><circle cx="150" cy="105" r="48" fill="#e6efe4"/><path d="M50 280 Q150 150 250 280Z" fill="#e6efe4"/></svg>
+        <div class="cap"><span class="demo-tag">Imagen de prueba</span> Foto real <span class="sol">[SOL]</span></div>
+      </div>
       <div class="card reveal"><h3>Historia</h3><p><span class="sol">[SOL: su historia]</span></p></div>
       <div class="card reveal"><h3>Certificaciones</h3><p><span class="sol">[SOL: lista de certificaciones]</span></p></div>
     </div>
@@ -323,9 +423,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 
 <!-- Testimonios: oculta hasta tener 3 a 5 con permiso escrito. Quita la clase "hidden" cuando esten. -->
 <section id="testimonios" class="hidden">
-  <div class="wrap">
-    <h2>Lo que dicen nuestros alumnos</h2>
-  </div>
+  <div class="wrap"><h2>Lo que dicen nuestros alumnos</h2></div>
 </section>
 
 <section id="faq">
@@ -335,7 +433,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
     <details><summary>Devolución y retracto</summary><p><span class="sol">[JOSÉ: texto legal, coherente con Términos y Devoluciones]</span></p></details>
     <details><summary>¿Qué pasa con las clases del grupal que no uso?</summary><p><span class="sol">[SOL: regla de clases no usadas]</span></p></details>
     <details><summary>¿Cómo entro a la app?</summary><p>Crea tu cuenta con el mismo correo que usaste al pagar y entra en app.solfitonline.com.</p></details>
-    <details><summary>¿Cuándo salen los cursos?</summary><p>Aún no hay fecha. Anótate en la lista de espera y te avisamos. <span class="sol">[SOL: fecha estimada]</span> El acceso es por 12 meses desde la compra.</p></details>
+    <details><summary>¿Cuándo salen los cursos?</summary><p>Aún no hay fecha confirmada. Anótate en la lista de espera y te avisamos. <span class="sol">[SOL: fecha estimada]</span> El acceso es por 12 meses desde la compra.</p></details>
+  </div>
+</section>
+
+<section class="dark" style="text-align:center">
+  <div class="wrap reveal">
+    <h2>Empieza hoy. <span class="hl">Tu yo de mañana te lo agradece.</span></h2>
+    <p class="lead" style="margin:0 auto 22px">Un plan, una app y alguien que te guía.</p>
+    <a class="btn big pulse" href="#caminos">Elegir mi plan</a>
   </div>
 </section>
 
@@ -349,10 +455,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
       <a href="https://instagram.com/solfitgym">Instagram @solfitgym</a></p>
     </div>
     <div>
-      <p>Razón social: <span class="sol">[razón social]</span><br>
-      RUT: <span class="sol">[RUT]</span><br>
-      Domicilio: <span class="sol">[domicilio]</span><br>
-      Correo: <span class="sol">[correo]</span></p>
+      <p>Razón social: <span class="sol">[razón social]</span><br>RUT: <span class="sol">[RUT]</span><br>Domicilio: <span class="sol">[domicilio]</span><br>Correo: <span class="sol">[correo]</span></p>
     </div>
     <div>
       <p><a href="#">Privacidad</a><br><a href="#">Términos</a><br><a href="#">Devoluciones</a><br><a href="#">Borrar cuenta</a></p>
@@ -361,7 +464,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   <div class="wrap"><p class="small">© SOLFIT. Todos los derechos reservados.</p></div>
 </footer>
 
+<a class="btn sticky-cta pulse" href="#waitlist">Unirme a la lista</a>
 <a class="wa-float" href="https://wa.me/56900000000" aria-label="Escribir por WhatsApp">WhatsApp</a>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <div id="cookies" role="dialog" aria-label="Aviso de cookies">
   <div class="wrap">
@@ -373,40 +478,109 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 
 <script>
 (function(){
+  var $=function(i){return document.getElementById(i)};
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  /* Rayos del sol (decorativo) */
+  var g=$('rays'),h='';
+  for(var i=0;i<16;i++){h+='<rect x="-4" y="-98" width="8" height="52" transform="rotate('+(i*22.5)+')"/>'}
+  g.innerHTML=h;
+
   /* Menú móvil */
-  var b=document.getElementById('burger'), n=document.getElementById('nav');
+  var b=$('burger'), n=$('nav');
   b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
   n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
 
-  /* Animación de entrada */
+  /* Barra de progreso de lectura */
+  var pr=$('progress');
+  window.addEventListener('scroll',function(){var d=document.documentElement;pr.style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%'},{passive:true});
+
+  /* Aparecer al hacer scroll */
   var els=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
     els.forEach(function(e){io.observe(e)});
   }else{els.forEach(function(e){e.classList.add('in')})}
 
+  /* Inclinación 3D suave en imágenes (solo con mouse) */
+  if(!reduce&&window.matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.tilt').forEach(function(t){
+      t.addEventListener('mousemove',function(e){var r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.transform='perspective(800px) rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg)'});
+      t.addEventListener('mouseleave',function(){t.style.transform=''});
+    });
+  }
+
+  /* DEMO: cuenta regresiva. José/Sol: cambia LAUNCH por la fecha real (o borra la sección) */
+  var LAUNCH=new Date(Date.now()+14*864e5);
+  function tick(){
+    var s=Math.max(0,Math.floor((LAUNCH-Date.now())/1000)),p=function(v){return v<10?'0'+v:''+v};
+    $('cd-d').textContent=p(Math.floor(s/86400));$('cd-h').textContent=p(Math.floor(s%86400/3600));
+    $('cd-m').textContent=p(Math.floor(s%3600/60));$('cd-s').textContent=p(s%60);
+  }
+  tick();setInterval(tick,1000);
+
+  /* DEMO: cupos. Cambia CUPOS_TOTAL y CUPOS_USADOS por números reales */
+  var CUPOS_TOTAL=50, CUPOS_USADOS=32;
+  $('cupos-txt').textContent='Cupos del reto: quedan '+(CUPOS_TOTAL-CUPOS_USADOS)+' de '+CUPOS_TOTAL+' (demo)';
+  var cb=$('cupos-bar');
+  setTimeout(function(){cb.style.width=(CUPOS_USADOS/CUPOS_TOTAL*100)+'%'},400);
+
+  /* Quiz */
+  var Q=[
+    {q:'¿Dónde prefieres entrenar?',o:[['En el gimnasio','p'],['En casa o donde esté','o'],['No lo sé aún','c']]},
+    {q:'¿Cuánta guía necesitas?',o:[['Poca, ya sé entrenar','a'],['Algo de guía','b'],['Que me acompañen en todo','c']]},
+    {q:'¿Qué te importa más?',o:[['Estar cerca y entrenar con gente','p'],['Flexibilidad de horarios','o'],['Aprender a mi ritmo','c']]}
+  ];
+  var qi=0,sc={p:0,o:0,c:0,a:0,b:0};
+  function qrender(){
+    var box=$('quiz');
+    if(qi>=Q.length){
+      var best=['p','o','c'].sort(function(x,y){return sc[y]-sc[x]})[0];
+      var r={p:['Presencial','#presencial'],o:['Online','#online'],c:['Cursos','#cursos']}[best];
+      box.innerHTML='<h3>Tu camino: '+r[0]+'</h3><p>Según tus respuestas, este es el mejor punto de partida.</p><a class="btn" href="'+r[1]+'">Ver '+r[0]+'</a> <button class="btn ghost" id="qre">Repetir</button>';
+      $('qre').onclick=function(){qi=0;sc={p:0,o:0,c:0,a:0,b:0};qrender()};
+      return;
+    }
+    var q=Q[qi];
+    box.innerHTML='<div class="qbar"><i style="width:'+(qi/Q.length*100)+'%"></i></div><h3>'+q.q+'</h3><div class="opts">'+q.o.map(function(o,i){return '<button class="opt" data-k="'+o[1]+'">'+o[0]+'</button>'}).join('')+'</div>';
+    box.querySelectorAll('.opt').forEach(function(bt){bt.onclick=function(){sc[bt.dataset.k]++;qi++;qrender()}});
+  }
+  qrender();
+
+  /* Filtro de planes */
+  var chips=document.querySelectorAll('.chip'),plans=document.querySelectorAll('#plans .plan');
+  chips.forEach(function(c){c.onclick=function(){
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+    var f=c.dataset.f;
+    plans.forEach(function(p){var ok=f==='all'||p.dataset.t.split(' ').indexOf(f)>-1;p.classList.toggle('off',!ok);p.classList.toggle('glow',f!=='all'&&ok)});
+  }});
+
+  /* Avisos DEMO de actividad: claramente marcados como demostración */
+  var T=['(demo) Alguien de Las Trancas se anotó a la lista','(demo) Nueva persona en la lista de espera','(demo) Se reservó un cupo del reto de 7 días'];
+  var tt=$('toast'),ti=0;
+  function toast(){tt.textContent=T[ti++%T.length];tt.classList.add('show');setTimeout(function(){tt.classList.remove('show')},4200)}
+  setTimeout(function(){toast();setInterval(toast,16000)},9000);
+
   /* Cookies: el píxel de Meta solo se carga después de aceptar */
-  var KEY='solfit_cookies';
-  var PIXEL_ID='REEMPLAZAR_PIXEL_ID';
+  var KEY='solfit_cookies', PIXEL_ID='REEMPLAZAR_PIXEL_ID';
   function loadPixel(){
     if(window.fbq||PIXEL_ID==='REEMPLAZAR_PIXEL_ID')return;
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init',PIXEL_ID);fbq('track','PageView');
   }
-  var box=document.getElementById('cookies'), v=null;
+  var box=$('cookies'), v=null;
   try{v=localStorage.getItem(KEY)}catch(e){}
   if(v==='yes'){loadPixel()} else if(v!=='no'){box.style.display='block'}
   function set(x){try{localStorage.setItem(KEY,x)}catch(e){} box.style.display='none'; if(x==='yes')loadPixel()}
-  document.getElementById('ck-yes').onclick=function(){set('yes')};
-  document.getElementById('ck-no').onclick=function(){set('no')};
+  $('ck-yes').onclick=function(){set('yes')};
+  $('ck-no').onclick=function(){set('no')};
 
   /* Lista de espera: aún no está conectada a ningún servicio */
-  var f=document.getElementById('waitlist'), msg=document.getElementById('wl-msg');
+  var f=$('waitlist'), msg=$('wl-msg');
   f.addEventListener('submit',function(ev){
     ev.preventDefault();
-    var c=document.getElementById('wl-contacto').value.trim();
-    if(!c){msg.textContent='Escribe tu correo o WhatsApp.';return}
-    if(!document.getElementById('wl-consent').checked){msg.textContent='Necesitamos tu consentimiento para anotarte.';return}
+    if(!$('wl-contacto').value.trim()){msg.textContent='Escribe tu correo o WhatsApp.';return}
+    if(!$('wl-consent').checked){msg.textContent='Necesitamos tu consentimiento para anotarte.';return}
     msg.textContent='Vista previa: el formulario aún no está conectado, no se guardó tu dato.';
     f.reset();
   });
