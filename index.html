@@ -144,6 +144,12 @@ td.p{font-weight:800;text-align:right;color:var(--green)}
 .course .lock{position:absolute;top:14px;right:14px;font-size:1.2rem}
 .course::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 40%,rgba(247,148,29,.18),transparent 60%);transform:translateX(-100%);transition:transform .6s}
 .course:hover::after{transform:translateX(100%)}
+.showcase{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-bottom:26px}
+.ph.vid{min-height:220px;align-items:stretch;flex-direction:column;justify-content:flex-end}
+.ph.vid video{position:relative;z-index:1;width:100%;aspect-ratio:16/9;background:#0f2f23;object-fit:cover}
+.fit{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:16px}
+.fit>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.tcard blockquote{margin:0 0 10px;font-size:1.05rem}
 
 /* Compra */
 .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 20px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
@@ -226,6 +232,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
       <span class="eyebrow">Entrenamiento con método</span>
       <h1>Deja de improvisar.<br><span class="hl">Entrena con sistema.</span></h1>
       <p class="lead">Entrenamiento con método: en el gimnasio, online o a tu ritmo con cursos.</p>
+      <p class="lead" style="margin-top:10px"><span class="sol">[SOL: promesa concreta: a quién le sirve, qué resultado y en cuánto tiempo. Ej. «El método de Sol para ___ en ___ semanas»]</span></p>
       <div class="cta-row">
         <a class="btn big pulse" href="#presencial">Entrena en el gimnasio</a>
         <a class="btn big ghost" href="#online">Entrena online</a>
@@ -254,10 +261,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   </div>
 </section>
 
-<section class="dark" id="lanzamiento">
+<!-- Urgencia REAL: esta seccion se muestra sola SOLO si defines LAUNCH (fecha real) o CUPOS_TOTAL en el script. -->
+<section class="dark hidden" id="lanzamiento">
   <div class="wrap launch">
     <div class="reveal">
-      <span class="eyebrow">Lanzamiento de cursos <span class="demo-tag">DEMO: fecha y cupos de prueba</span></span>
+      <span class="eyebrow">Lanzamiento de cursos</span>
       <h2>Los cursos están por abrir. Entra primero.</h2>
       <p class="lead">Quienes se anotan en la lista de espera reciben el aviso antes que nadie y un reto gratis de 7 días.</p>
       <div class="cd" id="cd" aria-live="off">
@@ -332,6 +340,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
         <tr><td>2 semanas</td><td class="p">$30.000</td></tr>
       </table>
     </div>
+    <p class="notice" style="margin-top:20px"><strong>Cupos:</strong> <span class="sol">[SOL: cupos reales del 1 a 1 y grupal, si son limitados]</span> · <a href="#compra">Cómo comprar</a></p>
     <h3 style="margin-top:36px">Dónde y cuándo</h3>
     <div class="where">
       <div class="card"><p><strong>Dirección</strong><br><span class="sol">[SOL: dirección exacta]</span></p><p><strong>Horarios</strong><br><span class="sol">[SOL: horarios del gimnasio]</span></p></div>
@@ -349,7 +358,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
     <div class="grid g3">
       <div class="card lift reveal"><h3>Qué incluye</h3><p><span class="sol">[SOL: definir si es asesoría con ella o el catálogo a $19.990 al mes]</span></p></div>
       <div class="card lift reveal"><h3>Cómo funciona</h3><p>Entras a la app, sigues tu plan y registras tu avance. <span class="sol">[SOL: detallar]</span></p></div>
-      <div class="card lift reveal"><h3>Empieza</h3><p>Escríbenos y te contamos las opciones.</p><a class="btn sm" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20entrenar%20online">Consultar por WhatsApp</a> <span class="sol">[SOL: número]</span></div>
+      <div class="card lift reveal"><h3>Empieza</h3><p class="demo-tag" style="margin:0 0 8px">Precio: <span class="sol">[SOL: precio visible, o «desde $___»]</span></p><p>Escríbenos y te contamos las opciones.</p><a class="btn sm" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20entrenar%20online">Consultar por WhatsApp</a> <span class="sol">[SOL: número]</span></div>
     </div>
   </div>
 </section>
@@ -361,6 +370,29 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
       <div class="card course reveal"><span class="lock" aria-hidden="true">🔒</span><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 1 <span class="sol">[SOL: nombre]</span></h3></div>
       <div class="card course reveal"><span class="lock" aria-hidden="true">🔒</span><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 2 <span class="sol">[SOL: nombre]</span></h3></div>
       <div class="card course reveal"><span class="lock" aria-hidden="true">🔒</span><span class="pill">Próximamente</span><h3 style="margin-top:12px">Curso 3 <span class="sol">[SOL: nombre]</span></h3></div>
+    </div>
+
+    <!-- Vitrina del curso: preview, temario, quien lo ensena, para quien es -->
+    <div class="showcase reveal">
+      <div>
+        <h3>Mira cómo se enseña</h3>
+        <div class="ph vid">
+          <video controls preload="none" playsinline poster="assets/curso-poster.jpg" aria-label="Avance gratuito del curso"><source src="assets/curso-preview.mp4" type="video/mp4"></video>
+          <div class="cap"><span class="demo-tag">Espacio de video</span> <span class="sol">[SOL: avance gratis de 30-60 s → assets/curso-preview.mp4]</span></div>
+        </div>
+        <p style="margin-top:14px"><strong>Lo enseña Sol.</strong> <span class="sol">[SOL: credencial clave en una línea]</span></p>
+      </div>
+      <div>
+        <h3>Temario módulo por módulo</h3>
+        <details open><summary>Módulo 1 <span class="sol">[SOL: título]</span></summary><p><span class="sol">[SOL: clases del módulo]</span></p></details>
+        <details><summary>Módulo 2 <span class="sol">[SOL: título]</span></summary><p><span class="sol">[SOL: clases del módulo]</span></p></details>
+        <details><summary>Módulo 3 <span class="sol">[SOL: título]</span></summary><p><span class="sol">[SOL: clases del módulo]</span></p></details>
+        <div class="fit">
+          <div><strong>✔ Es para ti si…</strong><br><span class="sol">[SOL: perfil ideal]</span></div>
+          <div><strong>✖ No es para ti si…</strong><br><span class="sol">[SOL: quién no]</span></div>
+        </div>
+        <p class="notice" style="margin-top:14px"><strong>Garantía:</strong> <span class="sol">[SOL/JOSÉ: ej. «si el primer módulo no te sirve, te cambiamos de programa». Solo si se puede cumplir]</span></p>
+      </div>
     </div>
     <p class="notice"><strong>Acceso por 12 meses desde la compra.</strong></p>
     <form id="waitlist" class="card" style="max-width:620px;margin-top:22px" novalidate>
@@ -418,12 +450,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
       <div class="card reveal"><h3>Historia</h3><p><span class="sol">[SOL: su historia]</span></p></div>
       <div class="card reveal"><h3>Certificaciones</h3><p><span class="sol">[SOL: lista de certificaciones]</span></p></div>
     </div>
+    <div class="ph vid reveal" style="margin-top:22px;max-width:640px">
+      <video controls preload="none" playsinline poster="assets/sol-poster.jpg" aria-label="Sol presenta su método"><source src="assets/sol-presentacion.mp4" type="video/mp4"></video>
+      <div class="cap"><span class="demo-tag">Espacio de video</span> <span class="sol">[SOL: video de 30-60 s hablando a cámara → assets/sol-presentacion.mp4]</span></div>
+    </div>
+    <p style="margin-top:22px"><a class="btn" href="#cursos">Unirme a la lista de cursos</a> <a class="btn ghost" href="#presencial">Ver planes presenciales</a></p>
   </div>
 </section>
 
 <!-- Testimonios: oculta hasta tener 3 a 5 con permiso escrito. Quita la clase "hidden" cuando esten. -->
 <section id="testimonios" class="hidden">
-  <div class="wrap"><h2>Lo que dicen nuestros alumnos</h2></div>
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Resultados reales</span><h2>Lo que dicen nuestros alumnos</h2></div>
+    <div class="grid g3">
+      <!-- Plantilla: copiar por cada testimonio con permiso escrito (nombre, foto y resultado concreto) -->
+      <div class="card tcard"><blockquote>«[SOL: cita con resultado concreto]»</blockquote><strong>[Nombre]</strong> · [resultado y plazo]</div>
+    </div>
+    <p style="margin-top:22px"><a class="btn" href="#cursos">Quiero mis resultados</a></p>
+  </div>
 </section>
 
 <section id="faq">
@@ -433,6 +477,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
     <details><summary>Devolución y retracto</summary><p><span class="sol">[JOSÉ: texto legal, coherente con Términos y Devoluciones]</span></p></details>
     <details><summary>¿Qué pasa con las clases del grupal que no uso?</summary><p><span class="sol">[SOL: regla de clases no usadas]</span></p></details>
     <details><summary>¿Cómo entro a la app?</summary><p>Crea tu cuenta con el mismo correo que usaste al pagar y entra en app.solfitonline.com.</p></details>
+    <details><summary>¿Necesito equipamiento en casa?</summary><p><span class="sol">[SOL: respuesta]</span></p></details>
+    <details><summary>¿Puedo pausar si me voy de viaje?</summary><p><span class="sol">[SOL/JOSÉ: política de pausa]</span></p></details>
+    <details><summary>¿Y si no tengo gimnasio?</summary><p><span class="sol">[SOL: respuesta]</span></p></details>
     <details><summary>¿Cuándo salen los cursos?</summary><p>Aún no hay fecha confirmada. Anótate en la lista de espera y te avisamos. <span class="sol">[SOL: fecha estimada]</span> El acceso es por 12 meses desde la compra.</p></details>
   </div>
 </section>
@@ -441,6 +488,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   <div class="wrap reveal">
     <h2>Empieza hoy. <span class="hl">Tu yo de mañana te lo agradece.</span></h2>
     <p class="lead" style="margin:0 auto 22px">Un plan, una app y alguien que te guía.</p>
+    <p><a class="btn big ghost" href="#waitlist">Unirme a la lista de cursos</a></p>
     <a class="btn big pulse" href="#caminos">Elegir mi plan</a>
   </div>
 </section>
@@ -511,19 +559,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   }
 
   /* DEMO: cuenta regresiva. José/Sol: cambia LAUNCH por la fecha real (o borra la sección) */
-  var LAUNCH=new Date(Date.now()+14*864e5);
+  var LAUNCH=null; /* fecha real, ej. new Date('2026-12-15T09:00:00-03:00'). Null = oculto */
   function tick(){
     var s=Math.max(0,Math.floor((LAUNCH-Date.now())/1000)),p=function(v){return v<10?'0'+v:''+v};
     $('cd-d').textContent=p(Math.floor(s/86400));$('cd-h').textContent=p(Math.floor(s%86400/3600));
     $('cd-m').textContent=p(Math.floor(s%3600/60));$('cd-s').textContent=p(s%60);
   }
-  tick();setInterval(tick,1000);
-
-  /* DEMO: cupos. Cambia CUPOS_TOTAL y CUPOS_USADOS por números reales */
-  var CUPOS_TOTAL=50, CUPOS_USADOS=32;
-  $('cupos-txt').textContent='Cupos del reto: quedan '+(CUPOS_TOTAL-CUPOS_USADOS)+' de '+CUPOS_TOTAL+' (demo)';
-  var cb=$('cupos-bar');
-  setTimeout(function(){cb.style.width=(CUPOS_USADOS/CUPOS_TOTAL*100)+'%'},400);
+  /* Cupos reales: poner números verdaderos. null = oculto */
+  var CUPOS_TOTAL=null, CUPOS_USADOS=0;
+  if(LAUNCH){tick();setInterval(tick,1000)}else{$('cd').classList.add('hidden')}
+  if(CUPOS_TOTAL){
+    $('cupos-txt').textContent='Cupos del reto: quedan '+(CUPOS_TOTAL-CUPOS_USADOS)+' de '+CUPOS_TOTAL;
+    var cb=$('cupos-bar');
+    setTimeout(function(){cb.style.width=(CUPOS_USADOS/CUPOS_TOTAL*100)+'%'},400);
+  }else{$('cupos-txt').classList.add('hidden');$('cupos-bar').parentNode.classList.add('hidden')}
+  if(LAUNCH||CUPOS_TOTAL)$('lanzamiento').classList.remove('hidden');
 
   /* Quiz */
   var Q=[
@@ -559,7 +609,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   var T=['(demo) Alguien de Las Trancas se anotó a la lista','(demo) Nueva persona en la lista de espera','(demo) Se reservó un cupo del reto de 7 días'];
   var tt=$('toast'),ti=0;
   function toast(){tt.textContent=T[ti++%T.length];tt.classList.add('show');setTimeout(function(){tt.classList.remove('show')},4200)}
-  setTimeout(function(){toast();setInterval(toast,16000)},9000);
+  /* Avisos falsos desactivados: no se muestran en la página pública */
 
   /* Cookies: el píxel de Meta solo se carga después de aceptar */
   var KEY='solfit_cookies', PIXEL_ID='REEMPLAZAR_PIXEL_ID';
